@@ -1,17 +1,18 @@
 def solution(citations):
     
     citations = sorted(citations)
-    tp = 0
-    idx = 0
-    # 0 1 3 5 6
     for i in range(len(citations)):
-        if citations[-1] == 0:
-            return 0
-        # 0 1 2 3 4 
-        if citations[i] >= len(citations[i:]):
-            return len(citations[i:])
+        print(len(citations)-i-1)
+        
+        if citations[len(citations)-i-1] <= len(citations[len(citations)-i-1:]):
+            print(citations[len(citations)-i-1])
+            tg = citations[len(citations)-i-1]
+            while True:
+                
+                if tg > len(citations[len(citations)-i-1:]):
+                    
+                    return tg-2
+                tg += 1
+                
             
-    
-    
-    # return 
-    
+            return citations[len(citations)-i-1]
